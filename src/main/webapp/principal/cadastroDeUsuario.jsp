@@ -7,7 +7,7 @@
 <title>Cadrastro de usúario</title>
 
 <style type="text/css">
-		*{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -99,7 +99,7 @@ span{
 </head>
 <body>
    <div class="container">
-       <h2>&lt; Cadastro &gt;</h2>
+       <h2><span><</span> Cadastro <span>></span></h2>
        <form class="form">
            <label>Nome</label>
            <input type="email" placeholder="Digite seu nome">
@@ -109,7 +109,7 @@ span{
            <input type="password" placeholder="Digite sua senha">
            <a href="#">Realizar Cadastrar</a>
        </form>
-		<div class="link" style="color: #fff;"><a href="../index.jsp"><span>Fazer login</span></a>
+		<div class="link" style="color: #fff;"><a href="login.jsp"><span>Fazer login</span></a>
 		</div>
    </div>
 </body>

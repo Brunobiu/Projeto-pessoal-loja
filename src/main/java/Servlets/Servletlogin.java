@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.ModelLogin;
 
-@WebServlet("/ServletLogin")/*Mapeamento que vem da tela*/
+@WebServlet("ServletLogin")/*Mapeamento que vem da tela*/
 public class Servletlogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -22,6 +22,9 @@ public class Servletlogin extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doPost(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
