@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>loja Virtual</title>
+<title>Cadastre-se</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"  >
 
 <style type="text/css">
@@ -41,8 +42,7 @@ h4{
 </head>
 <body>
 
-
-   	<h4>LOGIN</h4>
+<h4>CADASTRO DE USUÁRIO</h4>
 
 
 	<form action="<%=request.getContextPath() %>/ServletLogin" method="post" class="row g-3 needs-validation" novalidate>
@@ -73,16 +73,14 @@ h4{
 		</div>
 		
 		
-			<input type="submit" value="Acessar" class="btn btn-primary">
-			<a href="cadastro.jsp" class="btn btn-outline-primary">Cadastrar</a>
+			<input type="submit" value="Cadastrar" class="btn btn-primary">
+			<a href="login.jsp" class="btn btn-outline-primary">Voltar ao Login</a>
+
+		
 			
 	</form>
-	<h5>${msg}</h5>
    
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  ></script>
-   
-   
-   
-   
+
 </body>
 </html>

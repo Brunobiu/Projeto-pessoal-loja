@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.ModelLogin;
 
-@WebServlet("ServletLogin")/*Mapeamento que vem da tela*/
+@WebServlet("/ServletLogin")/*Mapeamento que vem da tela*/
 public class Servletlogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -31,7 +31,7 @@ public class Servletlogin extends HttpServlet {
 		
 		String login = request.getParameter("login"); /*Pegando dados da tela*/
 		String senha = request.getParameter("senha"); /*Pegando dados da tela*/
-		String url = request.getParameter("url");
+		//String url = request.getParameter("url");
 		
 		try {
 		
@@ -44,22 +44,22 @@ public class Servletlogin extends HttpServlet {
 					
 					request.getSession().setAttribute("usuario", modelLogin.getLogin());
 					
-					if(url == null || url.equals("null")) {
-						url = "principal/inicialDaLoja.jsp";
-					}
+					//if(url == null || url.equals("null")) {
+					//	url = "principal/inicialDaLoja.jsp";
+					//}
 					
-					RequestDispatcher redirecionar = request.getRequestDispatcher(url);
+					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/inicialDaLoja.jsp");
 					redirecionar.forward(request, response);
 					
 				}else {
-					RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
+					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/login.jsp");
 					request.setAttribute("msg", "Login ou senha incorretos!");
 					redirecionar.forward(request, response);
 					
 				}
 				
 			}else {
-				RequestDispatcher redirecionar = request.getRequestDispatcher("index.jsp");
+				RequestDispatcher redirecionar = request.getRequestDispatcher("principal/login.jsp");
 				request.setAttribute("msg", "Login ou senha incorretos!");
 				redirecionar.forward(request, response);
 			}
