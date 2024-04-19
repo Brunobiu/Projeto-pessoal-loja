@@ -402,25 +402,21 @@ main {
 						<img src="img/products/product-4.png">
 						<p class="product-name">Combo Gamer Meetion</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 899,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-5.png">
 						<p class="product-name">Planca de Video MSI</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 3.299,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-6.png">
 						<p class="product-name">Controle PS4</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 299,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-7.png">
 						<p class="product-name">Cadeira Gamers vermelha</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 599,00 <span>BR</span> </p>
 					</div>
 				</div>
 			</div>
@@ -431,25 +427,21 @@ main {
 						<img src="img/products/product-8.png">
 						<p class="product-name">Iphone 14 Pro Max</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 4.899,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-9.png">
 						<p class="product-name">Sansung S4 Ultra</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 3.899,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-10.png">
 						<p class="product-name">Suporte Luminoso</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 199,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-11.png">
 						<p class="product-name">Xiaomi Capture</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 1.899,00 <span>BR</span> </p>
 					</div>
 				</div>
 			</div>
@@ -460,25 +452,21 @@ main {
 						<img src="img/products/product-12.png">
 						<p class="product-name">Mini pc Gamer + Controle</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 6.899,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-13.png">
 						<p class="product-name">Volante e pedais</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 799,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-14.png">
 						<p class="product-name">Playstation 5</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 5.899,00 <span>BR</span> </p>
 					</div>
 					<div class="product">
 						<img src="img/products/product-15.png">
 						<p class="product-name">Pc Gamer Montado</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-						<p class="product-price">R$ 7.899,00 <span>BR</span> </p>
 					</div>
 				</div>
 			</div>
@@ -495,7 +483,6 @@ main {
 							dia a dia. Com design elegante e funcionalidades avançadas, como monitoramento de 
 							atividades físicas e notificações inteligentes, esta pulseira inteligente oferece 
 							uma experiência completa para quem deseja manter-se conectado e ativo. </p>
-							<button>Comprar</button>
 						</div>
 						<div class="header-bottom-side-right">
 							<img src="img/exclusive.png">

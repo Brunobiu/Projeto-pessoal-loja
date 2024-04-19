@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/principal/*"}) /*Intercpta todas as requisiçoes que vietem do projeto oumapeamento*/
+@WebFilter /*(urlPatterns = {"/principal/*"}) /*Intercpta todas as requisiçoes que vietem do projeto oumapeamento*/
 public class FilterAutenticacao extends HttpFilter implements Filter {
 	
 	private static Connection connection;

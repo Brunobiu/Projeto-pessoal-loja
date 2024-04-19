@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Loja Virtual</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style type="text/css">
 * {
@@ -27,65 +28,75 @@ body {
 	margin-right: auto;
 }
 
+
+
+
+
 .navbar {
-	background-color: #2c2c2c;
-	padding: 1rem;
-	position: sticky;
-	top: 0;
-	box-shadow: 10px 0px 10px #2c2c2c;
-	z-index: 99;
+    display: flex;
+    align-items: center;
+    background-color: #2c2c2c;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 99;
 }
 
-.navbar>div {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: relative;
+.header-inner-content {
+    display: flex;
+    flex-grow: 1; /* Faz o conteúdo ocupar todo o espaço disponível */
 }
 
 .logo {
-	color: #0084ff;
+    color: #0084ff;
 }
 
 .logo span {
-	color: #fff;
+    color: #fff;
+}
+
+nav {
+    flex-grow: 1; /* Faz a navegação ocupar todo o espaço disponível */
 }
 
 nav ul {
-	display: flex;
-	list-style: none;
-	align-items: center;
-}
-
-.nav-icon-container {
-	display: flex;
-	align-items: center;
-}
-
-.nav-icon-container img {
-	width: 30px;
-	cursor: pointer;
-}
-
-.nav-icon-container img:first-child {
-	margin-right: 1rem;
+    display: flex;
+    list-style: none;
+    justify-content: center; /* Centraliza os itens */
+    margin: 0;
+    padding: 0;
+    margin-top: 18px;
 }
 
 nav ul li {
-	color: #fff;
-	margin-right: 1.5rem;
-	cursor: pointer;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 5.5rem;
 }
+
+.nav-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img {
+    width: 30px;
+    cursor: pointer;
+}
+
+
 
 nav ul li:hover {
-	transform: translateY(-5px);
-	transition: all 0.2s;
-	font-weight: bold;
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
 }
 
-.menu-button {
-	display: none;
-}
+
+
+
+
 
 
 
@@ -102,6 +113,7 @@ nav ul li:hover {
 .header-bottom-side-left {
 	height: 100%;
 	flex-basis: 50%;
+	margin-top: 350px;
 }
 
 .header-bottom-side-left h2 {
@@ -184,7 +196,7 @@ main {
 }
 
 .page-inner-conter {
-	max-width: 1980px;
+	max-width: 1480px;
 	margin: 0 auto;
 	background-color: #2c2c2c;
 }
@@ -248,16 +260,28 @@ main {
 	margin: 8px auto 0 auto;
 }
 
+
+
+
+
 .product {
 	color: #2c2c2c;
 	margin-bottom: 1rem;
-	display: flex;
 	flex-direction: column;
 }
 
 .product-name {
 	font-weight: 600;
 	margin-top: 0.4rem;
+}
+
+.product .btn-group {
+    padding: 0 10px;
+    margin: 0 10px; 
+}
+
+.product .btn-group .btn {
+    margin-right: 50px; 
 }
 
 .rate {
@@ -419,23 +443,66 @@ main {
 <body>
 
 	<div class="navbar">
-		<div class="header-inner-content">
-			<h1 class="logo">Lojinha<span>Virtual</span></h1>
-			<nav>
-				<ul>
-					<li>Inicio</li>
-					<li>Produtos</li>
-					<li>Sobre</li>
-					<li>Contato</li>
-				</ul>
-			</nav>
-			
-			<div class="nav-icon-container">
-				<img src="img/cart.png">
-				<img src="img/menu.png" class="menu-button">
-			</div>
-		</div>
-	</div>
+    <div class="header-inner-content">
+        <h1 class="logo">Lojinha<span>Virtual</span></h1>
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Produtos</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-icon-container">
+        <nav class="navbar navbar-dark #2c2c2c fixed-top">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#"></a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+		      <div class="offcanvas-header">
+		        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Nome Usuário</h5>
+		        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		      </div>
+		      <div class="offcanvas-body">
+		        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+		          <li class="nav-item">
+		            <a class="nav-link active" aria-current="page" href="#">&#128104; Minha Conta</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link active" aria-current="page" href="#">&#128722; Minha Sacola</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link active" aria-current="page" href="#">&#8594; Sair</a>
+		          </li>
+		          <!--<li class="nav-item dropdown">
+		            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		              Dropdown
+		            </a>
+		            <ul class="dropdown-menu dropdown-menu-dark">
+		              <li><a class="dropdown-item" href="#">Action</a></li>
+		              <li><a class="dropdown-item" href="#">Another action</a></li>
+		              <li>
+		                <hr class="dropdown-divider">
+		              </li>
+		              <li><a class="dropdown-item" href="#">Something else here</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+		        <!-- <form class="d-flex mt-3" role="search">
+		          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+		          <button class="btn btn-success" type="submit">Search</button>
+		        </form> -->
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+
+    </div>
+</div>
+
 	
 	<header>
 		<div class="header-inner-content">
@@ -445,7 +512,8 @@ main {
 					<p>Explore o melhor da tecnologia e do universo gamer em nossa loja virtual. 
 					Encontre produtos que elevam seu trabalho e seu entretenimento a um novo nível. 
 					Seja bem-vindo à sua fonte de inovação e estilo </p>
-					<button>Ver Agora &#8594;</button>
+					<p class="product-price">R$ 5.299,00 <span>BR</span> </p>
+					<button>&dollar; Comprar</button>
 				</div>
 				<div class="header-bottom-side-right">
 					<img src="img/gaming-msi-header.png">
@@ -480,24 +548,40 @@ main {
 						<p class="product-name">Combo Gamer Meetion</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-5.png">
 						<p class="product-name">Planca de Video MSI</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 3.299,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-6.png">
 						<p class="product-name">Controle PS4</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 299,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-7.png">
 						<p class="product-name">Cadeira Gamers vermelha</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 599,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -509,24 +593,40 @@ main {
 						<p class="product-name">Iphone 14 Pro Max</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 4.899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-9.png">
 						<p class="product-name">Sansung S4 Ultra</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 3.899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-10.png">
 						<p class="product-name">Suporte Luminoso</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 199,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-11.png">
 						<p class="product-name">Xiaomi Capture</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 1.899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -538,49 +638,64 @@ main {
 						<p class="product-name">Mini pc Gamer + Controle</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 6.899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-13.png">
 						<p class="product-name">Volante e pedais</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 799,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-14.png">
 						<p class="product-name">Playstation 5</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 5.899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 					<div class="product">
 						<img src="img/products/product-15.png">
 						<p class="product-name">Pc Gamer Montado</p>
 						<p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						<p class="product-price">R$ 7.899,00 <span>BR</span> </p>
+						<div class="btn-group" role="group" aria-label="Default button group">
+						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		
 		
-		<div class="gray-backgraund">
-			<div class="page-inner-content">
-				<div class="header-inner-content">
-					<div class="header-bottom-side exclusive-container">
-						<div class="header-bottom-side-left">
-							<h2>Smart Band 4</h2>
-							<p>A Smart Band 4 é a escolha perfeita para quem busca praticidade e tecnologia no 
-							dia a dia. Com design elegante e funcionalidades avançadas, como monitoramento de 
-							atividades físicas e notificações inteligentes, esta pulseira inteligente oferece 
-							uma experiência completa para quem deseja manter-se conectado e ativo. </p>
-							<button>Ver Agora &#8594;</button>
-						</div>
-						<div class="header-bottom-side-right">
-							<img src="img/exclusive.png">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <li class="page-item">
+		      <a class="page-link" href="#" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <li class="page-item"><a class="page-link" href="#">1</a></li>
+		    <li class="page-item"><a class="page-link" href="#">2</a></li>
+		    <li class="page-item"><a class="page-link" href="#">3</a></li>
+		    <li class="page-item">
+		      <a class="page-link" href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+		
 		
 		
 		
@@ -646,6 +761,10 @@ main {
 		})
 		
 	</script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
