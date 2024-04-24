@@ -94,14 +94,6 @@ nav ul li:hover {
 }
 
 
-
-
-
-
-
-
-
-
 .header-bottom-side {
 
 	display: flex;
@@ -281,7 +273,7 @@ main {
 }
 
 .product .btn-group .btn {
-    margin-right: 50px; 
+    margin-right: 5px; 
 }
 
 .rate {
@@ -463,7 +455,7 @@ main {
 		    </button>
 		    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
 		      <div class="offcanvas-header">
-		        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Nome Usuário</h5>
+		        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Olá,  <%=session.getAttribute("usuario")%></h5>
 		        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 		      </div>
 		      <div class="offcanvas-body">
@@ -472,10 +464,14 @@ main {
 		            <a class="nav-link active" aria-current="page" href="#">&#128104; Minha Conta</a>
 		          </li>
 		          <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="#"><span style="color: red;">&#10084;</span> Favoritos
+				    </a>
+				</li>
+		          <li class="nav-item">
 		            <a class="nav-link active" aria-current="page" href="#">&#128722; Minha Sacola</a>
 		          </li>
 		          <li class="nav-item">
-		            <a class="nav-link active" aria-current="page" href="#">&#8594; Sair</a>
+		            <a class="nav-link active" aria-current="page" href="Servletlogin?acao=sair">&#8594; Sair</a>
 		          </li>
 		          <!--<li class="nav-item dropdown">
 		            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -550,7 +546,8 @@ main {
 						<p class="product-price">R$ 899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -560,7 +557,8 @@ main {
 						<p class="product-price">R$ 3.299,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -570,7 +568,8 @@ main {
 						<p class="product-price">R$ 299,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -580,7 +579,8 @@ main {
 						<p class="product-price">R$ 599,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 				</div>
@@ -595,7 +595,8 @@ main {
 						<p class="product-price">R$ 4.899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -605,7 +606,8 @@ main {
 						<p class="product-price">R$ 3.899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -615,7 +617,8 @@ main {
 						<p class="product-price">R$ 199,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -625,7 +628,8 @@ main {
 						<p class="product-price">R$ 1.899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 				</div>
@@ -640,7 +644,8 @@ main {
 						<p class="product-price">R$ 6.899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -650,7 +655,8 @@ main {
 						<p class="product-price">R$ 799,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -660,7 +666,8 @@ main {
 						<p class="product-price">R$ 5.899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 					<div class="product">
@@ -670,7 +677,8 @@ main {
 						<p class="product-price">R$ 7.899,00 <span>BR</span> </p>
 						<div class="btn-group" role="group" aria-label="Default button group">
 						  <button type="button" class="btn btn-outline-primary">&dollar; Comprar</button>
-						  <button type="button" class="btn btn-outline-primary">&#128722; Sacola</button>
+						  <button type="button" class="btn btn-outline-danger" onclick="adicionarAosFavoritos()">&#10084;</button>
+						  <button type="button" class="btn btn-outline-primary">&#128722; Carinho</button>
 						</div>
 					</div>
 				</div>

@@ -23,15 +23,23 @@ public class Servletlogin extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doPost(request, response);
+		String acao = request.getParameter("acao");
 		
+		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("sair")) {
+			request.getSession().invalidate(); /*Invalida a sessão*/
+			RequestDispatcher redirecioanr = request.getRequestDispatcher("index.jsp");
+			redirecioanr.forward(request, response);
+					
+		}else {
+			doPost(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String login = request.getParameter("login"); /*Pegando dados da tela*/
 		String senha = request.getParameter("senha"); /*Pegando dados da tela*/
-		//String url = request.getParameter("url");
+		String url = request.getParameter("url");
 		
 		try {
 		
@@ -44,22 +52,22 @@ public class Servletlogin extends HttpServlet {
 					
 					request.getSession().setAttribute("usuario", modelLogin.getLogin());
 					
-					//if(url == null || url.equals("null")) {
-					//	url = "principal/inicialDaLoja.jsp";
-					//}
+					if(url == null || url.equals("null")) {
+						url = "principal/inicialDaLoja.jsp";
+					}
 					
 					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/inicialDaLoja.jsp");
 					redirecionar.forward(request, response);
 					
 				}else {
-					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/login.jsp");
+					RequestDispatcher redirecionar = request.getRequestDispatcher("/principal/login.jsp");
 					request.setAttribute("msg", "Login ou senha incorretos!");
 					redirecionar.forward(request, response);
 					
 				}
 				
 			}else {
-				RequestDispatcher redirecionar = request.getRequestDispatcher("principal/login.jsp");
+				RequestDispatcher redirecionar = request.getRequestDispatcher("/principal/login.jsp");
 				request.setAttribute("msg", "Login ou senha incorretos!");
 				redirecionar.forward(request, response);
 			}

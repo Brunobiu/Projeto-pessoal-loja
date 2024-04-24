@@ -473,27 +473,6 @@ main {
 		</div>
 		
 		
-		<div class="gray-backgraund">
-			<div class="page-inner-content">
-				<div class="header-inner-content">
-					<div class="header-bottom-side exclusive-container">
-						<div class="header-bottom-side-left">
-							<h2>Smart Band 4</h2>
-							<p>A Smart Band 4 é a escolha perfeita para quem busca praticidade e tecnologia no 
-							dia a dia. Com design elegante e funcionalidades avançadas, como monitoramento de 
-							atividades físicas e notificações inteligentes, esta pulseira inteligente oferece 
-							uma experiência completa para quem deseja manter-se conectado e ativo. </p>
-						</div>
-						<div class="header-bottom-side-right">
-							<img src="img/exclusive.png">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		
 		<div class="page-inner-content">
 			<div class="testomonials">
 				<div class="testimonial">
@@ -543,10 +522,6 @@ main {
 			<p>© Todos os direitos autorais para o conteúdo deste site são de propriedade de Bruno / LojinhaVirtual</p>
 		</div>
 	</footer>
-	
-	
-	
-	
 	
 	
 </body>

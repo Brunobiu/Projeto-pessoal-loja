@@ -35,14 +35,19 @@ form {
 </head>
 <body>
 
-	<form action="<%=request.getContextPath()%>/ServletLogin"
-		method="post" class="row g-3 needs-validation" novalidate>
-		<input type="hidden" value="<%=request.getParameter("url")%>"
-			name="url">
+	<form action="<%=request.getContextPath()%>/ServletUsuarioController"
+		method="post" class="row g-3 needs-validation" >
+		
 
 		<h3 style="color: #000; left: 18%; top: 0%;">Cadastro de Usuário</h3>
 		
 		<!-- Campo Nome -->
+		<div class="col-md-12 mb-3" style="display: none;">
+			<label class="form-label" for="id"></label> <input
+				class="form-control" id="id" name="id" type="text"
+				placeholder="ID" >
+		</div>
+		
 		<div class="col-md-12 mb-3">
 			<label class="form-label" for="nome"></label> <input
 				class="form-control" id="nome" name="nome" type="text"
@@ -54,7 +59,7 @@ form {
 		<!-- Campo Email -->
 		<div class="col-md-12 mb-3">
 			<label class="form-label" for="email"></label> <input
-				class="form-control" id="email" name="email" type="email"
+				class="form-control" id="email" name="email" type="email" autocomplete="off"
 				placeholder="Email" required="required">
 			<div class="invalid-feedback">Campo obrigatório!</div>
 			<div class="valid-feedback">Ok!</div>
@@ -64,7 +69,7 @@ form {
 		<div class="col-md-12 mb-3">
 			<label class="form-label" for="senha"></label>
 			<div class="input-group">
-				<input class="form-control" id="senha" name="senha"
+				<input class="form-control" id="senha" name="senha" autocomplete="off"
 					placeholder="Senha" type="password" required="required">
 				<button class="btn btn-outline-secondary" type="button"
 					id="togglePassword">
@@ -76,10 +81,10 @@ form {
 		</div>
 
 		<div class="col-md-12 mb-3">
-			<label class="form-label" for="confirmarSenha"></label>
+			<label class="form-label" for="confirmasenha"></label>
 			<div class="input-group">
-				<input class="form-control" id="confirmarSenha"
-					name="confirmarSenha" placeholder="Confirmar Senha" type="password"
+				<input class="form-control" id="confirmasenha" autocomplete="off"
+					name="confirmasenha" placeholder="Confirmar Senha" type="password"
 					required="required">
 				<button class="btn btn-outline-secondary" type="button"
 					id="toggleConfirmarSenha">
@@ -91,10 +96,10 @@ form {
 		</div>
 
 		<div class="col-md-12" style="margin-top: 10px; margin-bottom: 10px;">
-			<a href="cadastro.jsp" class="btn btn-primary"
-				style="margin-left: 10px;">Cadastrar-se</a> <a href="#"
-				style="margin-left: 150px;">Voltar ao menu principal</a>
+		    <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Cadastrar-se</button>
+		    <a href="login.jsp" style="margin-left: 150px;">Voltar ao menu principal</a>
 		</div>
+
 	</form>
 
 
@@ -142,6 +147,31 @@ form {
 			}
 		});
 	</script>
+	
+	
+	<script type="text/javascript">
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function () {
+	  'use strict'
+
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.querySelectorAll('.needs-validation')
+
+	  // Loop over them and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+	</script>
+	
 
 </body>
 </html>

@@ -52,7 +52,7 @@ public class FilterAutenticacao extends HttpFilter implements Filter {
 			if (usuarioLogado == null && !urlParaAutenticar.equalsIgnoreCase("/principal/ServletLogin")) { // Não esta
 																											// logado
 
-				RequestDispatcher redireciona = request.getRequestDispatcher("/principal/login.jsp?url=" + urlParaAutenticar);
+				RequestDispatcher redireciona = request.getRequestDispatcher("/login.jsp?url=" + urlParaAutenticar);
 				request.setAttribute("msg", "Por favor realize o login!");
 				redireciona.forward(request, response);
 				return; // parar a execuxão e redireciona para o login

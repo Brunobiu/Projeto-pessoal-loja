@@ -32,7 +32,7 @@ form {
 	box-shadow: 0 0 20px #000;
 }
 
-h4 {
+h5 {
 	position: absolute;
 	top: 30%;
 	left: 33%;
@@ -58,7 +58,7 @@ h4 {
 		<div class="col-md-12 mb-3">
 			<label class="form-label" for="login"></label> <input
 				class="form-control" id="login" name="login" type="text"
-				placeholder="Número de telefone/Nome do Usuário/Email"
+				placeholder="Email"
 				required="required">
 			<div class="invalid-feedback">Campo obrigatório!</div>
 			<div class="valid-feedback">Ok!</div>
@@ -103,6 +103,29 @@ h4 {
 			// Alterna entre os ícones de olho aberto e fechado
 			this.querySelector('i').classList.toggle('fa-eye-slash');
 		});
+	</script>
+	
+	<script type="text/javascript">
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function () {
+	  'use strict'
+
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.querySelectorAll('.needs-validation')
+
+	  // Loop over them and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
 	</script>
 </body>
 </html>
