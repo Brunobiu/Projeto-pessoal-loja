@@ -17,11 +17,11 @@ private Connection connection;
 	
 	public boolean validarAutenticacao(ModelLogin modelLogin) throws Exception {
 		
-		String sql = "select * from model_login where upper(login) = upper(?) and upper(senha) = upper(?) ";
+		String sql = "select * from model_login where upper(email) = upper(?) and upper(senha) = upper(?) ";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
 		
-		statement.setString(1, modelLogin.getLogin());
+		statement.setString(1, modelLogin.getEmail());
 		statement.setString(2, modelLogin.getSenha());
 		
 		ResultSet resultSet = statement.executeQuery();

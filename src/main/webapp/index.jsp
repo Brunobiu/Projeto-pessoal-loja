@@ -385,7 +385,7 @@ main {
 		<div class="header-inner-content">
 			<h1 class="logo">Lojinha<span>Virtual</span></h1>
 			<div class="btn-group" role="group" aria-label="Basic example" style="position: fixed; top: 20px; right: 20px;">
-			    <a href="principal/login.jsp" class="btn btn-primary">Login</a>
+			    <a href="login.jsp" class="btn btn-primary">Login</a>
 			</div>
 
 		</div>

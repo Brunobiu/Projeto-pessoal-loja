@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.ModelLogin;
 
-@WebServlet("/ServletLogin")/*Mapeamento que vem da tela*/
+@WebServlet(urlPatterns = {"/principal/ServletLogin", "/ServletLogin"})/*Mapeamento que vem da tela*/
 public class Servletlogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -37,40 +37,41 @@ public class Servletlogin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String login = request.getParameter("login"); /*Pegando dados da tela*/
-		String senha = request.getParameter("senha"); /*Pegando dados da tela*/
+		String email = request.getParameter("email");
+		String senha = request.getParameter("senha");
 		String url = request.getParameter("url");
 		
 		try {
 		
-			if(login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) { /*Validado se é vazio ou nao existe, Null*/
-				ModelLogin modelLogin = new ModelLogin(); /*Colocando na classe de modelLogin*/
-				modelLogin.setLogin(login); /*Se os parametros pegos aqui dentro*/
-				modelLogin.setSenha(senha); /*Se os parametros pegos aqui dentro*/
-				
-				if(daoLoginRepository.validarAutenticacao(modelLogin)) { /*Simulação*/
+				if (email != null && !email.isEmpty() && senha != null && !senha.isEmpty()) {
 					
-					request.getSession().setAttribute("usuario", modelLogin.getLogin());
+					ModelLogin modelLogin = new ModelLogin();
+					modelLogin.setEmail(email);
+					modelLogin.setSenha(senha);
 					
-					if(url == null || url.equals("null")) {
-						url = "principal/inicialDaLoja.jsp";
+					if (daoLoginRepository.validarAutenticacao(modelLogin)) { /*Simulando login*/
+						
+						request.getSession().setAttribute("usuario", modelLogin.getEmail());
+						
+						if (url == null || url.equals("null")) {
+							url = "principal/inicialDaLoja.jsp";
+						}
+						
+						RequestDispatcher redirecionar = request.getRequestDispatcher(url);
+						redirecionar.forward(request, response);
+						
+					}else {
+						RequestDispatcher redirecionar = request.getRequestDispatcher("/login.jsp");
+						request.setAttribute("msg", "Informe o EMAIL ou SENHA corretamente!");
+						redirecionar.forward(request, response);
 					}
 					
-					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/inicialDaLoja.jsp");
-					redirecionar.forward(request, response);
-					
 				}else {
-					RequestDispatcher redirecionar = request.getRequestDispatcher("/principal/login.jsp");
-					request.setAttribute("msg", "Login ou senha incorretos!");
+					RequestDispatcher redirecionar = request.getRequestDispatcher("login.jsp");
+					request.setAttribute("msg", "Informe o EMAIL ou SENHA corretamente!");
 					redirecionar.forward(request, response);
-					
 				}
-				
-			}else {
-				RequestDispatcher redirecionar = request.getRequestDispatcher("/principal/login.jsp");
-				request.setAttribute("msg", "Login ou senha incorretos!");
-				redirecionar.forward(request, response);
-			}
+		
 		}catch (Exception e) {
 			e.printStackTrace();
 			RequestDispatcher redirecionar = request.getRequestDispatcher("erro.jsp");

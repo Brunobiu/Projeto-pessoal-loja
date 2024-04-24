@@ -54,7 +54,8 @@ h5 {
 		class="row g-3 needs-validation" novalidate>
 		<input type="hidden" value="<%=request.getParameter("url")%>"
 			name="url">
-		<h3 style="color: #000; left: 18%; top: 0%;">Entre</h3>
+		<h3 style="color: #000; left: 18%; top: 0%;">Redefinir senha</h3>
+		
 		<div class="col-md-12 mb-3">
 			<label class="form-label" for="login"></label> <input
 				class="form-control" id="login" name="login" type="text"
@@ -64,25 +65,9 @@ h5 {
 			<div class="valid-feedback">Ok!</div>
 		</div>
 
-		<div class="col-md-12 mb-3">
-			<label class="form-label" for="senha"></label>
-			<div class="input-group">
-				<input class="form-control" id="senha" name="senha"
-					placeholder="Senha" type="password" required="required">
-				<button class="btn btn-outline-secondary" type="button"
-					id="togglePassword">
-					<i class="fas fa-eye" aria-hidden="true"></i>
-				</button>
-			</div>
-			<div class="invalid-feedback">Campo obrigatório!</div>
-			<div class="valid-feedback">Ok!</div>
-		</div>
-
 		<div class="col-md-12" style="margin-top: 10px; margin-bottom: 10px;">
-			<input type="submit" value="Acessar" class="btn btn-primary">
-			<a href="cadastro.jsp" class="btn btn-outline-primary"
-				style="margin-left: 10px;">Cadastrar</a> <a href="#"
-				style="margin-left: 150px;">Esqueci a senha</a>
+			<input type="submit" value="PRÓXIMO" class="btn btn-primary">
+			<a href="../login.jsp" style="margin-left: 50px;">Voltar ao login</a>
 		</div>
 		<h5>${msg}</h5>
 

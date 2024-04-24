@@ -20,7 +20,7 @@ body {
 
 form {
 	position: absolute;
-	top: 20%;
+	top: 10%;
 	left: 33%;
 	right: 33%;
 	padding: 60px;
@@ -46,6 +46,14 @@ form {
 			<label class="form-label" for="id"></label> <input
 				class="form-control" id="id" name="id" type="text"
 				placeholder="ID" >
+		</div>
+		
+		<div class="col-md-12 mb-3">
+			<label class="form-label" for="login"></label> <input
+				class="form-control" id="login" name="login" type="text"
+				placeholder="Login" required="required">
+			<div class="invalid-feedback">Campo obrigatório!</div>
+			<div class="valid-feedback">Ok!</div>
 		</div>
 		
 		<div class="col-md-12 mb-3">
@@ -96,8 +104,16 @@ form {
 		</div>
 
 		<div class="col-md-12" style="margin-top: 10px; margin-bottom: 10px;">
+			<%-- Exibição da mensagem de sucesso --%>
+		    <% String mensagem = (String) request.getAttribute("mensagem"); %>
+		    <% if (mensagem != null && !mensagem.isEmpty()) { %>
+		        <div class="alert alert-success" role="alert">
+		            <%= mensagem %>
+		        </div>
+		    <% } %>
+		
 		    <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Cadastrar-se</button>
-		    <a href="login.jsp" style="margin-left: 150px;">Voltar ao menu principal</a>
+		    <a href="../login.jsp" style="margin-left: 150px;">Voltar ao login</a>
 		</div>
 
 	</form>
